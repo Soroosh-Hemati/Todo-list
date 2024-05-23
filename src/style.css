@@ -13,3 +13,17 @@
 .input-section button:hover{
     filter: brightness(.8);
 }
+button > i{
+    pointer-events: none;
+    transition: all .2s ease;
+}
+button:hover i.fa-trash{
+    color: red;
+}
+button:hover i.fa-check{
+    color: green;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: .7;
+}
