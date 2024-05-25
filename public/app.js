@@ -1,4 +1,4 @@
-let todos = [];
+// let todos = [];
 let filterValue = "all";
 const todoForm = document.querySelector(".todo-form");
 const todoInput = document.querySelector(".todo-form .input-box");
@@ -8,6 +8,10 @@ todoForm.addEventListener("submit", addNewTodo);
 selectTodos.addEventListener("change", (e) => {
   filterValue = e.target.value;
   filterTodos();
+});
+document.addEventListener("DOMContentLoaded", (e) => {
+  const todos = getAllTodos();
+  showTodos(todos);
 });
 
 function showTodos(todos) {
@@ -46,10 +50,12 @@ function addNewTodo(e) {
     title: todoInput.value,
     isCompleted: false,
   };
-  todos.push(newTodo);
+  // todos.push(newTodo);
+  saveTodo(newTodo);
   filterTodos();
 }
 function filterTodos() {
+  const todos = getAllTodos();
   switch (filterValue) {
     case "all": {
       showTodos(todos);
@@ -60,7 +66,7 @@ function filterTodos() {
       showTodos(filteredtodos);
       break;
     }
-    case "uncompeted": {
+    case "uncompleted": {
       const filteredtodos = todos.filter((todo) => !todo.isCompleted);
       showTodos(filteredtodos);
       break;
@@ -71,14 +77,30 @@ function filterTodos() {
   }
 }
 function removeTodo(e) {
+  let todos = getAllTodos();
   const dataId = Number(e.target.dataset.todoId);
   todos = todos.filter((todo) => todo.id != dataId);
+  saveAllTodos(todos);
   filterTodos();
 }
 function checkTodos(e) {
+  const todos = getAllTodos();
   const dataId = Number(e.target.dataset.todoId);
   const completedTodo = todos.find((todo) => todo.id == dataId);
-  console.log(todos);
   completedTodo.isCompleted = !completedTodo.isCompleted;
+  saveAllTodos(todos);
   filterTodos();
+}
+function getAllTodos() {
+  const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+  return savedTodos;
+}
+function saveTodo(todo) {
+  const savedTodos = getAllTodos();
+  savedTodos.push(todo);
+  localStorage.setItem("todos", JSON.stringify(savedTodos));
+  return savedTodos;
+}
+function saveAllTodos(todos){
+  localStorage.setItem("todos", JSON.stringify(todos));
 }

@@ -716,10 +716,6 @@ video {
   transition-duration: 200ms;
 }
 
-.duration-150{
-  transition-duration: 150ms;
-}
-
 .ease-linear{
   transition-timing-function: linear;
 }
@@ -756,11 +752,6 @@ button:hover i.fa-check{
   opacity: .7;
 }
 
-.hover\:text-red-600:hover{
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
 @media (min-width: 768px){
   .md\:mx-4{
     margin-left: 1rem;
@@ -777,6 +768,10 @@ button:hover i.fa-check{
 
   .md\:w-auto{
     width: auto;
+  }
+
+  .md\:w-2\/3{
+    width: 66.666667%;
   }
 
   .md\:flex-row{
