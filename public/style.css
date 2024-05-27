@@ -556,6 +556,34 @@ video {
   --tw-contain-style:  ;
 }
 
+.fixed{
+  position: fixed;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.left-0{
+  left: 0px;
+}
+
+.right-\[5\%\]{
+  right: 5%;
+}
+
+.top-0{
+  top: 0px;
+}
+
+.top-\[5\%\]{
+  top: 5%;
+}
+
+.z-\[1\]{
+  z-index: 1;
+}
+
 .mb-10{
   margin-bottom: 2.5rem;
 }
@@ -576,24 +604,36 @@ video {
   display: flex;
 }
 
+.hidden{
+  display: none;
+}
+
+.h-full{
+  height: 100%;
+}
+
 .h-screen{
   height: 100vh;
 }
 
-.w-1\/5{
-  width: 20%;
+.w-1\/6{
+  width: 16.666667%;
 }
 
-.w-2\/3{
-  width: 66.666667%;
-}
-
-.w-2\/5{
-  width: 40%;
+.w-2\/6{
+  width: 33.333333%;
 }
 
 .w-full{
   width: 100%;
+}
+
+.max-w-\[150px\]{
+  max-width: 150px;
+}
+
+.max-w-\[300px\]{
+  max-width: 300px;
 }
 
 .max-w-\[640px\]{
@@ -626,6 +666,10 @@ video {
 
 .border-none{
   border-style: none;
+}
+
+.bg-\[rgba\(0\2c 0\2c 0\2c 0\.4\)\]{
+  background-color: rgba(0,0,0,0.4);
 }
 
 .bg-gray-100{
@@ -747,9 +791,17 @@ button:hover i.fa-check{
   color: green;
 }
 
+button:hover i.fa-pencil{
+  color: #a88932;
+}
+
 .completed{
   text-decoration: line-through;
   opacity: .7;
+}
+
+.modal.show-modal{
+  display: block;
 }
 
 @media (min-width: 768px){
@@ -766,12 +818,12 @@ button:hover i.fa-check{
     width: 33.333333%;
   }
 
-  .md\:w-auto{
-    width: auto;
-  }
-
   .md\:w-2\/3{
     width: 66.666667%;
+  }
+
+  .md\:w-auto{
+    width: auto;
   }
 
   .md\:flex-row{
@@ -781,5 +833,19 @@ button:hover i.fa-check{
   .md\:px-0{
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+@media (min-width: 1280px){
+  .xl\:right-\[25\%\]{
+    right: 25%;
+  }
+
+  .xl\:top-1\/4{
+    top: 25%;
+  }
+
+  .xl\:top-\[20\%\]{
+    top: 20%;
   }
 }

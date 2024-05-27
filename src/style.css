@@ -23,7 +23,13 @@ button:hover i.fa-trash{
 button:hover i.fa-check{
     color: green;
 }
+button:hover i.fa-pencil{
+    color: #a88932;
+}
 .completed{
     text-decoration: line-through;
     opacity: .7;
+}
+.modal.show-modal{
+    display: block;
 }

@@ -45,6 +45,29 @@
         <div class="todos">
           <ul class="todo-list"></ul>
         </div>
+        <div
+          class="modal hidden fixed z-[1] top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.4)]"
+        >
+          <button
+            class="modal-close-btn text-3xl text-white absolute top-0 right-[5%] xl:top-[20%] xl:right-[25%]"
+          >
+            <i class="fa fa-close"></i>
+          </button>
+          <div
+            class="modal-form w-full absolute top-[5%] xl:top-1/4 flex flex-col justify-center items-center md:flex-row"
+          >
+            <input
+              type="text"
+              class="hidden-input-box w-full max-w-[300px] bg-gray-200 p-4 mb-4 md:mb-0 rounded-2xl border-none outline-none"
+            />
+            <button
+              id="edit-btn"
+              class="w-full max-w-[150px] md:w-auto bg-secondary text-white text-lg px-7 py-4 rounded-2xl md:mx-4 mb-4 md:mb-0 duration-200 ease-linear"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
       </div>
     </section>
     <script src="./app.js"></script>
